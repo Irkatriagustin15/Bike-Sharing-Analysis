@@ -1,9 +1,5 @@
-numpy==1.23.5
-pandas==1.5.3
-matplotlib==3.9.2
-seaborn==0.12.2
-plotly==5.24.1
-streamlit==1.39.0
-setuptools>=65.0.0
-wheel
-distutils
+pandas==2.1.1
+plotly==5.17.0
+scipy==1.11.3
+seaborn==0.13.0
+streamlit==1.27.1

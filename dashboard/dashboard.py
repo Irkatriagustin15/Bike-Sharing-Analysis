@@ -3,8 +3,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import streamlit as st
+import os
 
-day_df = pd.read_csv("dashboard/df_day.csv")
+if os.getenv("STREAMLIT_CLOUD"):
+    file_path = "dashboard/df_day.csv"
+    image_path = "dashboard/bike.jpg"
+else:
+    file_path = "df_day.csv"
+    image_path = "bike.jpg"
+
+day_df = pd.read_csv("df_day.csv")
 
 day_df['dteday'] = pd.to_datetime(day_df['dteday'])
 
@@ -82,7 +90,7 @@ min_date = day_df["dteday"].min()
 max_date = day_df["dteday"].max()    
 
 with st.sidebar:
-    st.image("dashboard/bike.jpg", width=275)
+    st.image("bike.jpg", width=275)
 
     st.sidebar.header("Filter:")
 

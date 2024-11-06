@@ -82,7 +82,7 @@ min_date = day_df["dteday"].min()
 max_date = day_df["dteday"].max()    
 
 with st.sidebar:
-    st.image("bike.jpg", width=275)
+    st.image("dashboard/bike.jpg", width=275)
 
     st.sidebar.header("Filter:")
 

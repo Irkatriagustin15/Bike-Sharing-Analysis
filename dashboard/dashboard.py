@@ -4,7 +4,7 @@ import seaborn as sns
 import plotly.express as px
 import streamlit as st
 
-day_df = pd.read_csv("dashboard/df_day.csv")
+day_df = pd.read_csv("./df_day.csv")
 
 day_df['dteday'] = pd.to_datetime(day_df['dteday'])
 

@@ -1,6 +1,6 @@
 # Bike Sharing Analysis ✨
 ## Submission "Belajar Analisis Data dengan Python"
-Streamlit Cloud :
+Streamlit Cloud : https://bike-sharing-analysis-aqv5guyf886vrk98yidh7q.streamlit.app/
 ![Deskripsi Gambar](https://github.com/Irkatriagustin15/Bike-Sharing-Analysis/blob/master/preview.png?raw=true)
 ## Instalasi
 Clone repository ini ke dalam komputer anda :

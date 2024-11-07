@@ -14,8 +14,13 @@ if os.getenv("STREAMLIT_CLOUD"):
 else:
     file_path = "df_day.csv"
     image_path = "bike.jpg"
+  
+st.write("Path to CSV file:", file_path)
+st.write("CSV file exists:", os.path.isfile(file_path))
+st.write("Path to Image file:", image_path)
+st.write("Image file exists:", os.path.isfile(image_path))
 
-day_df = pd.read_csv("df_day.csv")
+day_df = pd.read_csv(file_path)
 
 day_df['dteday'] = pd.to_datetime(day_df['dteday'])
 
@@ -92,7 +97,7 @@ min_date = day_df["dteday"].min()
 max_date = day_df["dteday"].max()
       
 with st.sidebar:
-    st.image("bike.jpg", width=275)
+    st.image(image_path, width=275)
     st.sidebar.header("Filter:")
 
     date_selection = st.date_input(

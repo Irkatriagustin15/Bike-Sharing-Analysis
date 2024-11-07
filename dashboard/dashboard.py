@@ -12,8 +12,8 @@ if os.getenv("STREAMLIT_CLOUD"):
     file_path = "dashboard/df_day.csv"
     image_path = "dashboard/bike.jpg"
 else:
-    file_path = "df_day.csv"
-    image_path = "bike.jpg"
+    file_path = "dashboard/df_day.csv"
+    image_path = "dashboard/bike.jpg"
   
 st.write("Path to CSV file:", file_path)
 st.write("CSV file exists:", os.path.isfile(file_path))

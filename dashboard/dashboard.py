@@ -15,7 +15,7 @@ else:
     file_path = "df_day.csv"
     image_path = "bike.jpg"
 
-day_df = pd.read_csv(file_path)
+day_df = pd.read_csv("df_day.csv")
 
 day_df['dteday'] = pd.to_datetime(day_df['dteday'])
 
@@ -92,7 +92,7 @@ min_date = day_df["dteday"].min()
 max_date = day_df["dteday"].max()
       
 with st.sidebar:
-    st.image(image_path, width=275)
+    st.image("bike.jpg", width=275)
     st.sidebar.header("Filter:")
 
     date_selection = st.date_input(

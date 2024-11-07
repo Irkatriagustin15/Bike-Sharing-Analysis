@@ -62,18 +62,25 @@ max_date = day_df["dteday"].max()
 with st.sidebar:
     st.image(image_path, width=275)
     st.sidebar.header("Filter:")
-    date_selection = st.date_input(label="Date Filter", min_value=min_date, max_value=max_date, value=[min_date, max_date])
+    
+    date_selection = st.date_input(
+    label="Date Filter",
+    min_value=min_date,
+    max_value=max_date,
+    value=[min_date, max_date]
+)
 
-    try:
-        if isinstance(date_selection, list) and len(date_selection) == 2:
-            start_date, end_date = date_selection
-        else:
-            start_date = date_selection
-            end_date = max_date
-        start_date, end_date = pd.to_datetime(start_date), pd.to_datetime(end_date)
-    except Exception:
-        start_date, end_date = min_date, max_date
+if isinstance(date_selection, (list, tuple)) and len(date_selection) == 2:
+    start_date, end_date = date_selection
+else:
+    start_date = date_selection[0] if isinstance(date_selection, (list, tuple)) else date_selection
+    end_date = max_date
 
+# Pastikan kedua nilai adalah tipe datetime
+start_date = pd.to_datetime(start_date)
+end_date = pd.to_datetime(end_date)
+
+# Filter data berdasarkan start_date dan end_date
 main_df = day_df[(day_df["dteday"] >= start_date) & (day_df["dteday"] <= end_date)]
 
 # Data processing

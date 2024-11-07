@@ -5,6 +5,9 @@ import plotly.express as px
 import streamlit as st
 import os
 
+st.set_page_config(page_title="Bike Rental Analysis",
+                   layout="wide")
+
 if os.getenv("STREAMLIT_CLOUD"):
     file_path = "dashboard/df_day.csv"
     image_path = "dashboard/bike.jpg"

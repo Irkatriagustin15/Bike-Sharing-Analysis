@@ -6,13 +6,19 @@ import os
 # Set up Streamlit page configuration
 st.set_page_config(page_title="Bike Rental Analysis", layout="wide")
 
-# Define paths for file access
-if os.getenv("STREAMLIT_CLOUD"):
+# Tentukan jalur path file berdasarkan keberadaan file
+if os.path.isfile("dashboard/df_day.csv"):
     file_path = "dashboard/df_day.csv"
     image_path = "dashboard/bike.jpg"
 else:
     file_path = "df_day.csv"
     image_path = "bike.jpg"
+
+# Cek dan tampilkan status keberadaan file
+st.write("Path to CSV file:", file_path)
+st.write("CSV file exists:", os.path.isfile(file_path))
+st.write("Path to Image file:", image_path)
+st.write("Image file exists:", os.path.isfile(image_path))
 
 # Load data
 try:

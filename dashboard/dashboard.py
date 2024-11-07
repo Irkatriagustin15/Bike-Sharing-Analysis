@@ -14,12 +14,6 @@ else:
     file_path = "dashboard/df_day.csv"
     image_path = "dashboard/bike.jpg"
 
-# Display paths and check for file existence
-st.write("Path to CSV file:", file_path)
-st.write("CSV file exists:", os.path.isfile(file_path))
-st.write("Path to Image file:", image_path)
-st.write("Image file exists:", os.path.isfile(image_path))
-
 # Load data
 try:
     day_df = pd.read_csv(file_path)

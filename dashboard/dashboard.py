@@ -11,8 +11,8 @@ if os.getenv("STREAMLIT_CLOUD"):
     file_path = "dashboard/df_day.csv"
     image_path = "dashboard/bike.jpg"
 else:
-    file_path = "dashboard/df_day.csv"
-    image_path = "dashboard/bike.jpg"
+    file_path = "df_day.csv"
+    image_path = "bike.jpg"
 
 # Load data
 try:
